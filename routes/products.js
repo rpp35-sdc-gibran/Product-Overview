@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers/products')
 
-router.get('/', (req, res) => {
-  res.json('hello');
-})
+router.get('/', controllers.products.get)
 
 module.exports = router;
