@@ -1,9 +1,10 @@
 var express = require('express');
 var db = require('./db');
 var app = express();
+const products = require('./routes/products')
 
 var parser = require('body-parser');
-
+app.use('/products', products)
 module.exports.app = app;
 app.set('port', 3000)
 
