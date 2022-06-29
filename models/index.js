@@ -16,6 +16,18 @@ module.exports = {
         console.log('what are results', results, 'what is id', id)
         callback(err, results);
       })
+    },
+    getProductStyles: function(id, callback) {
+      var queryStr = 'select styles.*, photos.*, \
+      skus.id as skuId, skus.size, skus.quantity \
+       from styles join \
+      photos on styles.id = photos.styleId \
+      join skus on styles.id = skus.styleId \
+      where styles.productId = ?';
+      db.query(queryStr, [id], function(err, results) {
+        console.log('what are results', results, 'what is id', id)
+        callback(err, results);
+      })
     }
   }
 }
