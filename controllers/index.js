@@ -54,6 +54,12 @@ module.exports = {
       models.products.getProductStyles(req.params.product_id, function(err, results) {
         if (err) {
           res.sendStatus(404)
+          return
+        }
+
+        if (results.length === 0) {
+          res.json(results);
+          return
         }
 
         var formattedResults = {}
@@ -67,7 +73,7 @@ module.exports = {
 
 
           if (style === null) {
-            console.log('i made it here')
+
 
             formattedResults.results.push({
               style_id: result.styleId,
