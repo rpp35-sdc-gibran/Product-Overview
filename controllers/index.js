@@ -56,13 +56,18 @@ module.exports = {
           res.sendStatus(404)
           return
         }
-
+        var formattedResults = {}
         if (results.length === 0) {
-          res.json(results);
+          formattedResults.product_id = req.params.product_id;
+          formattedResults.results = [];
+          formattedResults.results.push({
+            photos: []
+          })
+          res.json(formattedResults);
           return
         }
 
-        var formattedResults = {}
+
         formattedResults.product_id = results[0].productId
 
         formattedResults.results = []
