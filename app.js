@@ -13,8 +13,8 @@ app.use('/products', products)
 module.exports.app = app;
 app.set('port', 8000)
 
-app.get('/loaderio-8e7e8fd6c25ddd8c389258076f9595fe', (req, res) => {
-  res.send('loaderio-8e7e8fd6c25ddd8c389258076f9595fe');
+app.get('/loaderio-cc0fe095e1740095ad04705347d786cd', (req, res) => {
+  res.send('loaderio-cc0fe095e1740095ad04705347d786cd');
 });
 // If we are being run directly, run the server.
 if (!module.parent) {
